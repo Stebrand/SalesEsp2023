@@ -2,12 +2,34 @@
 
 @if (MyList is null)
 {
-    @if(Loading is null)
+    @if (Loading is null)
     {
         <div class="align-items-center">
-            <img alt="Cargando..." src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="Cargando..."/>
         </div>
     }
+    else
+    {
+        @Loading
+    }
+
+}
+else if (MyList.Count == 0)
+{
+    @if (NoRecords is null)
+    {
+        <div class="align-items-center">
+            <p>No hay registros para mostrar</p>        
+        </div>
+    }
+    else
+    {
+        @NoRecords
+    }
+}
+else
+{
+    @Body
 }
 
 @code {
