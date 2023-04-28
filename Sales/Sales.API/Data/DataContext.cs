@@ -9,7 +9,6 @@ namespace Sales.API.Data
         {
             
         }
-
         
         public DbSet<City> Cities{ get; set; }
         
