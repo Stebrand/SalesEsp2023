@@ -92,6 +92,15 @@ namespace Sales.API.Data
                 _context.Categories.Add(new Category { Name = "Autos" });
                 _context.Categories.Add(new Category { Name = "Comida" });
                 _context.Categories.Add(new Category { Name = "Gamer" });
+                _context.Categories.Add(new Category { Name = "Ropa" });
+                _context.Categories.Add(new Category { Name = "Zapatos" });
+                _context.Categories.Add(new Category { Name = "Tecnologia" });
+                _context.Categories.Add(new Category { Name = "Hogar" });
+                _context.Categories.Add(new Category { Name = "Herramientas" });
+                _context.Categories.Add(new Category { Name = "Dormitorio" });
+                _context.Categories.Add(new Category { Name = "Mascotas" });
+                _context.Categories.Add(new Category { Name = "Deportes" });
+                _context.Categories.Add(new Category { Name = "Salud y Belleza" });
                 await _context.SaveChangesAsync();
             }
         }
