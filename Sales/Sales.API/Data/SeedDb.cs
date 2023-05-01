@@ -32,9 +32,9 @@ namespace Sales.API.Data
                 {
                     List<CountryResponse> countries = (List<CountryResponse>)responseCountries.Result!;
                     foreach (CountryResponse countryResponse in countries)
-                    {
-                        Console.WriteLine("-------------------AQUI VOY--------------- " );
+                    {                       
                         Country country = await _context.Countries!.FirstOrDefaultAsync(c => c.Name == countryResponse.Name!)!;
+                        Console.WriteLine($"------------------- AQUI VOY: {country} ---------------------------------");
                         if (country == null)
                         {
                             country = new() { Name = countryResponse.Name!, States = new List<State>() };
@@ -99,7 +99,7 @@ namespace Sales.API.Data
                 _context.Categories.Add(new Category { Name = "Deportes" });
                 _context.Categories.Add(new Category { Name = "Salud y Belleza" });
                 await _context.SaveChangesAsync();
-                Console.WriteLine("-------------------YA TERMINE-------------------");
+                Console.WriteLine("---------------------YA TERMINE-------------------");
             }
         }
     }
