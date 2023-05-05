@@ -2,9 +2,19 @@
     <ul class="pagination">
         @foreach (var link in Links)
         {
-            <li @onclick=@(() => InternalSelectedPage(link)) style="cursor: pointer" with ="50" class="page-item @(link.Enable ? null: "disabled") @(link.Enable ? "active" : null)">
-            <a class="page-link">@link.Text</a>
-            </li>
+            @if (link.Text == "Anterior" || link.Text == "Siguiente")
+            {
+                <li @onclick=@(() => InternalSelectedPage(link)) style="cursor: pointer" class="page-item @(link.Enable ? null: "disabled") @(link.Enable ? "active" : null)">
+                    <a class="page-link">@link.Text</a>
+                </li>
+            }
+            else
+            {
+                <li @onclick=@(() => InternalSelectedPage(link)) style="cursor: pointer; width: 40px" class="page-item @(link.Enable ? null: "disabled") @(link.Enable ? "active" : null)">
+                    <a class="page-link">@link.Text</a>
+                </li>
+            }
+
         }
      </ul>
 </nav>
